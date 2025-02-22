@@ -8,12 +8,12 @@ export default class PuzzleGameScene extends Phaser.Scene {
 	init() {
 		this.previewSize = 120
 		this.previewX = 100
-		this.previewY = 150
+		this.previewY = 225
 		this.previewGap = 5
 
 		this.blockSize = 200
 		this.blockX = 600
-		this.blockY = 100
+		this.blockY = 150
 		this.blockGap = 5
 
 		this.previewGroup = undefined
@@ -33,7 +33,7 @@ export default class PuzzleGameScene extends Phaser.Scene {
 
 	create() {
 		this.add
-			.text(300, 600, "Start", {
+			.text(285, 700, "Start", {
 				fontSize: "128px",
 				color: "#ffffff",
 				backgroundColor: "#000000",
@@ -45,12 +45,30 @@ export default class PuzzleGameScene extends Phaser.Scene {
 			})
 
 		this.moveLabel = this.add
-			.text(10, 10, "Moves: 0", {
+			.text(20, 20, "Moves: 0", {
 				fontSize: "50px",
 				color: "white",
 				backgroundColor: "black",
 			})
 			.setDepth(1)
+
+		this.add
+			.text(100, 150, "Solved Puzzle:", {
+				fontSize: "40px",
+				color: "white",
+				backgroundColor: "black",
+			})
+			.setDepth(0)
+
+		this.add
+			.text(600, 75, "Fix This Puzzle:", {
+				fontSize: "40px",
+				color: "white",
+				backgroundColor: "black",
+			})
+			.setDepth(0)
+
+		this.startGame()
 
 		this.startGame()
 	}
